@@ -1,0 +1,1 @@
+print("Streamlit app is running")
