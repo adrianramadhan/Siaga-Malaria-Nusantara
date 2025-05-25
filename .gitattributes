@@ -1,19 +1,16 @@
 # --- TensorFlow SavedModel ---
-exported_models/**/saved_model.pb      filter=lfs diff=lfs merge=lfs -text
-exported_models/**/fingerprint.pb      filter=lfs diff=lfs merge=lfs -text
-
+models/exported_models/**/saved_model.pb        filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/fingerprint.pb        filter=lfs diff=lfs merge=lfs -text
 # checkpoint variables
-exported_models/**/variables.data-*    filter=lfs diff=lfs merge=lfs -text
-exported_models/**/variables.index     filter=lfs diff=lfs merge=lfs -text
-
+models/exported_models/**/variables.data-*      filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/variables.index       filter=lfs diff=lfs merge=lfs -text
 # --- TensorFlow Lite models ---
-**/*.tflite                            filter=lfs diff=lfs merge=lfs -text
-
+models/exported_models/**/*.tflite              filter=lfs diff=lfs merge=lfs -text
 # --- TFJS model weights shards ---
-exported_models/**/group*-shard*.bin   filter=lfs diff=lfs merge=lfs -text
-
+models/exported_models/**/group*-shard*.bin     filter=lfs diff=lfs merge=lfs -text
 # --- Keras / HDF5 / Pickle models ---
-exported_models/**/**/*.h5             filter=lfs diff=lfs merge=lfs -text
-exported_models/**/**/*.keras          filter=lfs diff=lfs merge=lfs -text
-exported_models/**/**/*.pkl            filter=lfs diff=lfs merge=lfs -text
-exported_models/**/**/*.pkt            filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/**/*.h5               filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/**/*.keras            filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/**/*.pkl              filter=lfs diff=lfs merge=lfs -text
+models/exported_models/**/**/*.pkt              filter=lfs diff=lfs merge=lfs -text
+exported_models/**/saved_model.pb               filter=lfs diff=lfs merge=lfs -text
