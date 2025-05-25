@@ -21,10 +21,21 @@ Proyek ini tersusun rapi dalam beberapa folder utama
 
 ## EDA
 
-Sebelum melangkah ke pemodelan, kami menggali dataset malaria untuk memahami karakteristiknya. Dataset ini berisi gambar sel darah dengan dua label: Parasit dan tidak terinfeksi.
+Sebelum melangkah ke pemodelan, kami menggali dataset malaria untuk memahami karakteristiknya. Dataset ini berisi gambar sel darah dengan dua label: Parasitized (terinfeksi malaria) dan Uninfected (sehat).
 
-Temuan Menarik
-- Jelaskan temuan dari pertanyaan yang telah ditentukan.
+Langkah-langkah EDA yang dilakukan:
+
+- Pemeriksaan gambar corrupt: Seluruh gambar pada direktori train, valid, dan test diperiksa satu per satu untuk memastikan tidak ada file rusak atau tidak terbaca. Hasilnya, tidak ditemukan gambar corrupt.
+
+- Distribusi kelas: Jumlah gambar di masing-masing kelas seimbang, baik untuk data train, valid, maupun test. Ini memastikan model tidak terdorong untuk memihak ke salah satu kelas.
+
+- Visualisasi sampel gambar: Beberapa contoh gambar dari masing-masing kelas divisualisasikan untuk melihat perbedaan visual antara sel darah yang terinfeksi dan tidak terinfeksi.
+
+- Ukuran gambar: Semua gambar memiliki ukuran yang sama yaitu 224x224 piksel, sehingga tidak diperlukan proses resize tambahan sebelum training.
+
+- Pemeriksaan duplikasi gambar: Data train, valid, dan test diperiksa untuk memastikan tidak ada gambar yang identik secara konten (bukan hanya nama file). Hasilnya, tidak ditemukan gambar duplikat di ketiga subset tersebut.
+
+EDA ini membantu kami memastikan kualitas data sebelum proses pemodelan dimulai, sehingga hasil pemodelan nantinya menjadi lebih akurat dan dapat diandalkan.
 
 
 ## Pemodelan
